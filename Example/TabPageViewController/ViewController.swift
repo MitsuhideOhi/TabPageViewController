@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         let vc1 = UIViewController()
         vc1.view.backgroundColor = UIColor.whiteColor()
         let vc2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ListViewController")
-        tc.tabItems = [(vc1, "First"), (vc2, "Second")]
+        tc.tabItems = [(vc1, NSAttributedString.init(string: "First")), (vc2, NSAttributedString.init(string: "Second"))]
         var option = TabPageOption()
         option.tabWidth = view.frame.width / CGFloat(tc.tabItems.count)
         tc.option = option
@@ -45,7 +45,13 @@ class ViewController: UIViewController {
         vc4.view.backgroundColor = UIColor(red: 149/255, green: 252/255, blue: 197/255, alpha: 1.0)
         let vc5 = UIViewController()
         vc5.view.backgroundColor = UIColor(red: 252/255, green: 182/255, blue: 106/255, alpha: 1.0)
-        tc.tabItems = [(vc1, "Mon."), (vc2, "Tue."), (vc3, "Wed."), (vc4, "Thu."), (vc5, "Fri.")]
+        tc.tabItems = [
+            (vc1, NSAttributedString.init(string: "Mon.")),
+            (vc2, NSAttributedString.init(string: "Tue.")),
+            (vc3, NSAttributedString.init(string: "Wed.")),
+            (vc4, NSAttributedString.init(string: "Thu.")),
+            (vc5, NSAttributedString.init(string: "Fri."))
+        ]
         tc.isInfinity = true
         let nc = UINavigationController()
         nc.viewControllers = [tc]

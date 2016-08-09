@@ -12,9 +12,9 @@ class TabCollectionCell: UICollectionViewCell {
 
     var tabItemButtonPressedBlock: (Void -> Void)?
     var option: TabPageOption = TabPageOption()
-    var item: String = "" {
+    var item: NSAttributedString = NSAttributedString.init(string: "") {
         didSet {
-            itemLabel.text = item
+            itemLabel.attributedText = item
             itemLabel.invalidateIntrinsicContentSize()
             invalidateIntrinsicContentSize()
         }
@@ -42,7 +42,7 @@ class TabCollectionCell: UICollectionViewCell {
     }
 
     override func sizeThatFits(size: CGSize) -> CGSize {
-        if item.characters.count == 0 {
+        if item.string.characters.count == 0 {
             return CGSizeZero
         }
 

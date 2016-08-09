@@ -11,7 +11,7 @@ import UIKit
 public class TabPageViewController: UIPageViewController {
     public var isInfinity: Bool = false
     public var option: TabPageOption = TabPageOption()
-    public var tabItems: [(viewController: UIViewController, title: String)] = [] {
+    public var tabItems: [(viewController: UIViewController, title: NSAttributedString)] = [] {
         didSet {
             tabItemsCount = tabItems.count
         }
